@@ -1,0 +1,8 @@
+git init
+git remote add origin git@github.com:warren-bank/subtitle-resync.git
+git checkout --orphan "gh-pages"
+git add --all .
+git commit -m "initial commit"
+git tag "v1.0.0"
+git push -u origin "gh-pages"
+git push --tags origin

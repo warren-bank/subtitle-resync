@@ -1,0 +1,17 @@
+/* class is dynamically removed by javascript */
+.noscript {
+  display: none;
+}
+
+body {
+  text-align: center;
+}
+body > #content {
+  display: inline-block;
+}
+body > #content > #heading {
+  margin-bottom: 2em;
+}
+body > #content > #tool {
+  text-align: left;
+}

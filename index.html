@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Subtitle Resync</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+  </head>
+  <body>
+    <div id="content">
+      <div id="heading">
+        <h1>Subtitle Resync</h1>
+        <p>Offline client-side tool to shift the subtitles in an .srt file by a fixed time offset</p>
+        <hr />
+      </div>
+      <div id="tool" class="noscript">
+        <form id="form">
+          <input id="file" type="file" name="file" accept=".srt" />
+          <br /><br />
+          <input type="radio" name="sign" value="1" checked="checked" /> Add delay <input type="radio" name="sign" value="-1" /> Remove delay<br /><br />
+          Hour(s)        : <input type="text" name="hour" value="0" size="1" />
+          Minute(s)      : <input type="text" name="min"  value="0" size="1" />
+          Second(s)      : <input type="text" name="sec"  value="0" size="1" />
+          Millisecond(s) : <input type="text" name="ms"   value="0" size="1" />
+          <br /><br />
+          <input type="submit" value="Download"/>
+        </form>
+      </div>
+      <div id="error_message">
+        <noscript>
+          <h2>Error: Javascript is required.</h2>
+          <h3>Please enable, or try another web browser.</h3>
+        </noscript>
+      </div>
+    </div>
+    <script src="js/lib/subber.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
