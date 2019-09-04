@@ -34,7 +34,7 @@ const show_result = (ms) => {
 
 const get_position_ms = (form, name) => {
   let ts = form[name].value
-  let ms = 0
+  let ms = null
 
   ts.replace(/(\d{2}):(\d{2}):(\d{2}),(\d{3})/g, function(){
     ms = ts2ms( [].slice.call(arguments, 1 , 5))
@@ -51,6 +51,22 @@ const handleFormSubmit = (event) => {
 
   const ms_vid = get_position_ms(form, 'ts_vid')
   const ms_srt = get_position_ms(form, 'ts_srt')
+
+  let msg = []
+  if (ms_vid === null) {
+    msg.push('<p>Video timestamp is not formatted correctly <br /><span class="small pre">(HH:mm:ss,SSS)</span></p>')
+  }
+  if (ms_srt === null) {
+    msg.push('<p>SRT timestamp is not formatted correctly <br /><span class="small pre">(HH:mm:ss,SSS)</span></p>')
+  }
+  if (msg.length) {
+    msg.push('<p class="inlineblock left small pre">H: hours<br />m: minutes<br />s: seconds<br />S: milliseconds<br /><br />only substitute integers: 0-9</p>')
+    msg = msg.join('')
+
+    show_error(msg)
+    return
+  }
+
   const result = ms_vid - ms_srt
 
   show_result(result)

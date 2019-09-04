@@ -3,6 +3,19 @@
   display: none;
 }
 
+.small {
+  font-size: 0.8em;
+}
+.inlineblock {
+  display: inline-block;
+}
+.left {
+  text-align: left;
+}
+.pre {
+  font-family: monospace;
+}
+
 body {
   text-align: center;
 }
