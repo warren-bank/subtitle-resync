@@ -15,3 +15,7 @@ body > #content > #heading {
 body > #content > #tool {
   text-align: left;
 }
+body > #content > #error_message {
+  margin-top: 2em;
+  color: red;
+}
