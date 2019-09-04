@@ -1,8 +1,18 @@
-const show_error = (msg, nowrap) => {
+const show_message = (msg, prefix, nowrap) => {
+  if (typeof prefix !== 'string')
+    prefix = ''
+
+  if (prefix)
+    msg = prefix + msg
+
   const el = document.getElementById('error_message')
   el.innerHTML = msg
-    ? (nowrap ? msg : `<h2>Error: ${msg}</h2>`)
+    ? (nowrap ? msg : `<h2>${msg}</h2>`)
     : ''
+}
+
+const show_error = (msg) => {
+  show_message(msg, 'Error: ', false)
 }
 
 const show_result = (ms) => {
@@ -14,7 +24,7 @@ const show_result = (ms) => {
 
   msg += ` of ${Math.abs(ms)} Millisecond(s)`
 
-  show_error(msg, true)
+  show_message(msg, '', false)
 }
 
 const get_position_ms = (form, name) => {
