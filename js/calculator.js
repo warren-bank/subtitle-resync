@@ -18,11 +18,16 @@ const show_error = (msg) => {
 const show_result = (ms) => {
   let msg
 
-  msg = (ms < 0)
-    ? 'Remove delay'
-    : 'Add delay'
+  if (ms === 0) {
+    msg = '<span style="color:green;">&#x2714; SRT is in sync with video</span>'
+  }
+  else {
+    msg = (ms < 0)
+      ? 'Remove delay'
+      : 'Add delay'
 
-  msg += ` of ${Math.abs(ms)} Millisecond(s)`
+    msg += ` of ${Math.abs(ms)} Millisecond(s)`
+  }
 
   show_message(msg, '', false)
 }
