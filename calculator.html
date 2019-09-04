@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Subtitle Resync Calculator</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+  </head>
+  <body>
+    <div id="content">
+      <div id="heading">
+        <h1>Subtitle Resync Calculator</h1>
+        <p>Helper utility to determine the necessary fixed time offset</p>
+        <hr />
+      </div>
+      <div id="tool" class="noscript">
+        <form id="form">
+          <h3>Video Timestamp:</h3>
+          <div><input type="text" name="ts_vid" value="00:00:00,000" size="12" minlength="12" maxlength="12" /></div>
+          <blockquote>The exact timestamp during video playback that a particular word/sentence is spoken.</blockquote>
+          <h3>SRT Timestamp:</h3>
+          <div><input type="text" name="ts_srt" value="00:00:00,000" size="12" minlength="12" maxlength="12" /></div>
+          <blockquote>The exact timestamp in the .srt at which the same word/sentence occurs.</blockquote>
+          <input type="submit" value="Calculate Offset"/>
+        </form>
+      </div>
+      <div id="error_message">
+        <noscript>
+          <h2>Error: Javascript is required.</h2>
+          <h3>Please enable, or try another web browser.</h3>
+        </noscript>
+      </div>
+    </div>
+    <script src="js/lib/subber.js"></script>
+    <script src="js/calculator.js"></script>
+    <div id="navigation_icon">
+      <a href="index.html">
+        <img src="img/resync.png" />
+      </a>
+    </div>
+  </body>
+</html>

@@ -31,9 +31,9 @@ function ts2ms(ts){
  */
 function resync (delay, srt) {
   return srt.replace(/(\d{2}):(\d{2}):(\d{2}),(\d{3})/g, function(){
-     var ms = ts2ms( [].slice.call(arguments, 1 , 5));
-     ms += delay;
-     return ms2ts(ms);
+    var ms = ts2ms( [].slice.call(arguments, 1 , 5));
+    ms += delay;
+    return ms2ts(ms);
   });
 }
 
